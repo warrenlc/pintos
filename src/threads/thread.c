@@ -12,8 +12,10 @@
 #include "threads/synch.h"
 #include "threads/vaddr.h"
 #include "devices/timer.h"
+#include "userprog/flist.h"
 #ifdef USERPROG
 #include "userprog/process.h"
+
 #endif
 
 /** Random value for struct thread's `magic' member.

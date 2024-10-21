@@ -1,4 +1,5 @@
 ## Code for setting up the main stack.
+## This was written by Filip Strömbäck of Linköping University, Sweden.
 
 	.globl setup_main_stack_asm
 	.func setup_main_stack_asm
