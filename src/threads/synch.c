@@ -132,7 +132,7 @@ sema_up (struct semaphore *sema)
 
   /** Check if thread switch should occur */
   thread_ready_list_sort_and_yield ();
-  intr_set_level (old_level);
+  //intr_set_level (old_level);
 }
 
 static void sema_test_helper (void *sema_);
@@ -439,6 +439,7 @@ cond_broadcast (struct condition *cond, struct lock *lock)
 }
 
 
+#ifdef USERPROG
 /* Initializes rw_lock RW. This is basically just two semaphores
    and a counter for how many processes are reading a protected
    area at the same time. The goal is to allow several parallel 
@@ -494,6 +495,7 @@ rw_lock_release_writelock (struct rw_lock *rw)
   sema_up (&rw->write_lock);
 }
 
+#endif
 
 /** Compares two semaphore_elems based on the priority of the threads that called them in the 
  *  list of semaphores for a condition variable */

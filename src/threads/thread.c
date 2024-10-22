@@ -441,10 +441,10 @@ thread_ready_list_sort_and_yield (void)
       /** Yield CPU if new priority is no longer highest */ 
       if (front->priority > thread_current ()->priority)
         {
-          if (!intr_context ())
+          //if (!intr_context ())
             thread_yield ();
-          else
-            intr_yield_on_return ();
+          //else
+          //  intr_yield_on_return ();
         }
     }
   intr_set_level (old);
