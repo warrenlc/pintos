@@ -60,6 +60,10 @@ userprog_SRC += userprog/exception.c	# User exception handler.
 userprog_SRC += userprog/syscall.c	# System call handler.
 userprog_SRC += userprog/gdt.c		# GDT initialization.
 userprog_SRC += userprog/tss.c		# TSS management.
+userprog_SRC += userprog/flist.c	# file descriptor table
+userprog_SRC += userprog/plist.c   	# process table
+userprog_SRC += userprog/load.c		# loading a process
+userprog_SRC += userprog/main-stack.S # setup the stack for a process
 
 # No virtual memory code yet.
 #vm_SRC = vm/file.c			# Some file.

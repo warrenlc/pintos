@@ -6,7 +6,10 @@
 #include <stdint.h>
 
 #include "threads/fixed_point.h"
+#ifdef USERPROG
 #include "userprog/flist.h"
+#endif
+
 /** States in a thread's life cycle. */
 enum thread_status
   {
@@ -106,10 +109,10 @@ struct thread
     /* Shared between thread.c and synch.c. */
     struct list_elem elem;              /**< List element. */
 
-    struct flist f_table;
 #ifdef USERPROG
     /* Owned by userprog/process.c. */
     uint32_t *pagedir;                  /**< Page directory. */
+    struct flist f_table;
 #endif
 
     /* Owned by thread.c. */

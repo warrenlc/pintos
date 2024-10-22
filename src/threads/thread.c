@@ -653,7 +653,9 @@ init_thread (struct thread *t, const char *name, int priority)
       t->recent_cpu = 0;
       t->priority = priority;
     }
+  #ifdef USERPROG
   flist_init (&t->f_table); 
+  #endif
   t->priority_base = t->priority;
   t->lock_waiting_for = NULL;
   t->magic = THREAD_MAGIC;
